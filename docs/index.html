@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$GULPY: Hooting to the Moon!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+      body {
+        font-family: 'Press Start 2P', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f0fb;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+      .container {
+        width: 100%;
+        max-width: 95%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      header {
+        width: 100%;
+        padding: 1.5rem 0;
+        text-align: center;
+        background: linear-gradient(135deg, #f48fb1, #ce93d8);
+        border-bottom: 2px solid #e91e63;
+      }
+      header h1 {
+        font-size: 3.5rem;
+        color: #fff;
+        margin-bottom: 0.75rem;
+        text-shadow: 2px 2px 4px #d81b60;
+      }
+      header p {
+        font-size: 1.1rem;
+        color: #fff;
+        margin-bottom: 0;
+        text-shadow: 1px 1px 2px #d81b60;
+      }
+      .hero-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3rem;
+      }
+      .hero-image {
+        width: 100%;
+        max-width: 700px;
+        margin-bottom: 2rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        animation: fadeIn 1s ease, pulse 2s infinite alternate;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes pulse {
+        from { transform: scale(1); }
+        to { transform: scale(1.04); }
+      }
+      .hero-image-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+      .cta-button {
+        padding: 1rem 2.5rem;
+        font-size: 1.3rem;
+        color: #fff;
+        background: linear-gradient(135deg, #ff4081, #f50057);
+        border: none;
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        margin-top: 2rem;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+        font-family: 'Press Start 2P', sans-serif;
+        text-decoration: none;
+        animation: fadeInUp 1s ease;
+      }
+      @keyframes fadeInUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      .cta-button:hover {
+        background: linear-gradient(135deg, #f50057, #c51162);
+        transform: scale(1.06);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      }
+      .meme-section {
+        width: 100%;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+      .meme-section h2 {
+        font-size: 2.2rem;
+        color: #9c27b0;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+        animation: slideInLeft 1s ease;
+      }
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      .meme-image {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 1rem;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        margin: 0 auto;
+        transition: transform 0.3s ease;
+      }
+      .meme-image:hover {
+        transform: scale(1.04);
+      }
+      .meme-text {
+        font-size: 1rem;
+        color: #555;
+        margin-top: 1rem;
+        animation: fadeIn 1s ease;
+      }
+      footer {
+        width: 100%;
+        padding: 2rem 0;
+        text-align: center;
+        background: linear-gradient(135deg, #ce93d8, #f48fb1);
+        color: #fff;
+        margin-top: 3rem;
+        border-top: 2px solid #e91e63;
+        font-size: 0.9rem;
+        text-shadow: 1px 1px 2px #d81b60;
+      }
+      footer p{
+        animation: fadeIn 1s ease;
+      }
+      @media (max-width: 768px) {
+        .container {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+        header h1 {
+          font-size: 3rem;
+        }
+        header p {
+          font-size: 0.9rem;
+        }
+        .hero-image {
+          width: 95%;
+        }
+        .cta-button {
+          font-size: 1.2rem;
+          padding: 0.9rem 2.2rem;
+        }
+        .meme-section h2 {
+          font-size: 1.8rem;
+        }
+        .meme-image {
+          width: 95%;
+        }
+      }
+    </style>
+</head>
+<body class="bg-light">
+    <header>
+        <div class="container">
+            <h1 class="text-white">$GULPY: Hooting to the Moon!</h1>
+            <p class="text-white">Get your $GULPY and join the owl-some community!</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-image-container">
+                <img src="http://googleusercontent.com/image_generation_content/1" alt="$GULPY Owls" class="hero-image rounded-lg shadow-lg">
+            </div>
+            <a href="#" class="cta-button">Grab Your $GULPY!</a>
+        </section>
+
+        <section class="meme-section">
+            <h2>$GULPY Hoot of the Week</h2>
+            <img src="https://via.placeholder.com/600x400?text=GULPY+Meme+of+the+Week" alt="$GULPY Meme" class="meme-image rounded-lg">
+            <p class="meme-text">"Owl be seeing you on the moon!"</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 $GULPY. All rights reserved. This is not financial advice. Hoot responsibly.</p>
+        </div>
+    </footer>
+</body>
+</html>
